@@ -1,4 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.config;
+package pl.bartlomiejstepien.pictionaryonline.application.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.server.ServerHttpRequest;

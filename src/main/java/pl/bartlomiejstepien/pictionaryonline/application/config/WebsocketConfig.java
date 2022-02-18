@@ -1,10 +1,11 @@
-package pl.bartlomiejstepien.pictionaryonline.config;
+package pl.bartlomiejstepien.pictionaryonline.application.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+import pl.bartlomiejstepien.pictionaryonline.application.interceptor.WebsocketHandshakeInterceptor;
 
 @Configuration
 @EnableWebSocketMessageBroker
