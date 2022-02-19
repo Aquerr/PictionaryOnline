@@ -1,4 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.domain.word.exception;
+package pl.bartlomiejstepien.pictionaryonline.domain.wordpack.exception;
 
 import java.io.IOException;
 

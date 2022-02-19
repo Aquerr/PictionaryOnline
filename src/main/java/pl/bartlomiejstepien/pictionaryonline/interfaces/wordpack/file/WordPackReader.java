@@ -1,7 +1,8 @@
-package pl.bartlomiejstepien.pictionaryonline.interfaces.storage.file;
+package pl.bartlomiejstepien.pictionaryonline.interfaces.wordpack.file;
 
 import org.springframework.stereotype.Component;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.WordPack;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPack;
+import pl.bartlomiejstepien.pictionaryonline.interfaces.FileUtils;
 
 import java.io.IOException;
 import java.nio.file.Files;

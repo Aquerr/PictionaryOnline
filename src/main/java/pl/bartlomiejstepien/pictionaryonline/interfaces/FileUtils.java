@@ -1,4 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.interfaces.storage.file;
+package pl.bartlomiejstepien.pictionaryonline.interfaces;
 
 public class FileUtils
 {

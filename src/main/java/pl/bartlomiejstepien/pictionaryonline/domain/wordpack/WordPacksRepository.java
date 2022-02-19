@@ -1,6 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.interfaces.storage;
-
-import pl.bartlomiejstepien.pictionaryonline.domain.word.WordPack;
+package pl.bartlomiejstepien.pictionaryonline.domain.wordpack;
 
 import java.io.IOException;
 import java.util.List;

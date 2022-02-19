@@ -1,10 +1,9 @@
-package pl.bartlomiejstepien.pictionaryonline.domain.word;
+package pl.bartlomiejstepien.pictionaryonline.domain.wordpack;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.exception.CouldNotGetWordPackException;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.exception.CouldNotGetWordsPacksException;
-import pl.bartlomiejstepien.pictionaryonline.interfaces.storage.WordPacksRepository;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.exception.CouldNotGetWordPackException;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.exception.CouldNotGetWordsPacksException;
 
 import java.io.IOException;
 import java.util.List;

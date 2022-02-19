@@ -1,0 +1,26 @@
+<config
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xsi:schemaLocation="
+            http://www.ehcache.org/v3
+            http://www.ehcache.org/schema/ehcache-core-3.7.xsd">
+
+    <cache alias="wordsForPackCache">
+        <expiry>
+            <tti unit="seconds">120</tti>
+        </expiry>
+        <resources>
+            <heap>500</heap>
+        </resources>
+    </cache>
+    
+    <cache alias="wordpacksCache">
+        <expiry>
+            <tti unit="seconds">120</tti>
+        </expiry>
+        <resources>
+            <heap>20</heap>
+        </resources>
+    </cache>
+
+</config>

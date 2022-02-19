@@ -1,12 +1,12 @@
-package pl.bartlomiejstepien.pictionaryonline.interfaces.web.words;
+package pl.bartlomiejstepien.pictionaryonline.interfaces.web.wordpacks;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.WordPack;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.WordPacksService;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.exception.CouldNotGetWordPackException;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.exception.CouldNotGetWordsPacksException;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPack;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPacksService;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.exception.CouldNotGetWordPackException;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.exception.CouldNotGetWordsPacksException;
 import pl.bartlomiejstepien.pictionaryonline.interfaces.web.error.ErrorResponse;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/wordpacks")
-public class WordsController
+public class WordPacksController
 {
     private final WordPacksService wordPacksService;
 

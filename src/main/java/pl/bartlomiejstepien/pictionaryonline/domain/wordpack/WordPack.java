@@ -1,4 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.domain.word;
+package pl.bartlomiejstepien.pictionaryonline.domain.wordpack;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

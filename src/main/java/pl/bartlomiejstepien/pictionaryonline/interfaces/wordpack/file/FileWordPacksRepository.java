@@ -1,4 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.interfaces.storage.file;
+package pl.bartlomiejstepien.pictionaryonline.interfaces.wordpack.file;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.util.ResourceUtils;
-import pl.bartlomiejstepien.pictionaryonline.domain.word.WordPack;
-import pl.bartlomiejstepien.pictionaryonline.interfaces.storage.WordPacksRepository;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPack;
+import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPacksRepository;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class FileWordPacksRepository implements WordPacksRepository
     }
 
     @Override
-    @Cacheable("wordpacks")
+    @Cacheable("wordpacksCache")
     public List<WordPack> getWordsPacks() throws IOException
     {
         return Files.list(Paths.get(this.wordpacksDir))
@@ -55,14 +55,14 @@ public class FileWordPacksRepository implements WordPacksRepository
     }
 
     @Override
-    @Cacheable("words")
+    @Cacheable("wordsForPackCache")
     public List<String> getWordsForPack(final String packName) throws IOException
     {
         return this.wordPackReader.read(Paths.get(this.wordpacksDir).resolve(packName)).getWords();
     }
 
     @Override
-    @Cacheable("wordpacks")
+    @Cacheable("wordpacksCache")
     public WordPack getWordPack(String packName) throws IOException
     {
         return this.wordPackReader.read(Paths.get(this.wordpacksDir).resolve(packName));
