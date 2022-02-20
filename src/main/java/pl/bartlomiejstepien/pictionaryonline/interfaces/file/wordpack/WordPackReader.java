@@ -1,4 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.interfaces.wordpack.file;
+package pl.bartlomiejstepien.pictionaryonline.interfaces.file.wordpack;
 
 import org.springframework.stereotype.Component;
 import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPack;

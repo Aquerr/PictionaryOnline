@@ -1,4 +1,4 @@
-package pl.bartlomiejstepien.pictionaryonline.interfaces.wordpack.file;
+package pl.bartlomiejstepien.pictionaryonline.interfaces.file.wordpack;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
