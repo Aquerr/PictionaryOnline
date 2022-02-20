@@ -7,7 +7,7 @@
 
     <cache alias="wordsForPackCache">
         <expiry>
-            <tti unit="seconds">120</tti>
+            <ttl unit="minutes">10</ttl>
         </expiry>
         <resources>
             <heap>500</heap>
@@ -16,7 +16,7 @@
     
     <cache alias="wordpacksCache">
         <expiry>
-            <tti unit="seconds">120</tti>
+            <ttl unit="minutes">10</ttl>
         </expiry>
         <resources>
             <heap>20</heap>
