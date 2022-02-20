@@ -6,7 +6,7 @@ import spock.lang.Specification
 
 class WordPacksServiceTest extends Specification {
 
-    private static final String EMPTY_WORD_PACK_NAME = "TEST"
+    private static final String EMPTY_WORD_PACK_NAME = "EMPTY_PACK"
 
     private WordPacksRepository wordPacksRepository
     private WordPacksService wordPacksService
@@ -27,7 +27,7 @@ class WordPacksServiceTest extends Specification {
         then:
         wordPacks
         wordPacks.size() == 1
-        wordPacks.get(0).getPackName() == EMPTY_WORD_PACK_NAME
+        wordPacks.get(0).getName() == EMPTY_WORD_PACK_NAME
         wordPacks.get(0).getWords() == Collections.emptyList()
     }
 
@@ -46,34 +46,6 @@ class WordPacksServiceTest extends Specification {
         exception instanceof CouldNotGetWordsPacksException
     }
 
-    def "getWordsForPack should get words from repository and return them"()
-    {
-        given:
-        wordPacksRepository.getWordsForPack(EMPTY_WORD_PACK_NAME) >> prepareWordsList()
-
-        when:
-        List<String> words = wordPacksService.getWordsForPack(EMPTY_WORD_PACK_NAME)
-
-        then:
-        words
-        words == prepareWordsList()
-    }
-
-    def "getWordsForPack should throw CouldNotGetWordPackException when repository throws IOException"()
-    {
-        given:
-        wordPacksRepository.getWordsForPack(EMPTY_WORD_PACK_NAME) >> {
-            throw new IOException()
-        }
-
-        when:
-        wordPacksService.getWordsForPack(EMPTY_WORD_PACK_NAME)
-
-        then:
-        Exception exception = thrown()
-        exception instanceof CouldNotGetWordPackException
-    }
-
     def "getWordPack should get word pack from repository for given name"()
     {
         given:
@@ -84,7 +56,7 @@ class WordPacksServiceTest extends Specification {
 
         then:
         wordPack
-        wordPack.packName == EMPTY_WORD_PACK_NAME
+        wordPack.name == EMPTY_WORD_PACK_NAME
     }
 
     def "getWordPack should throw CouldNotGetWordPackException when repository throws IOException"()

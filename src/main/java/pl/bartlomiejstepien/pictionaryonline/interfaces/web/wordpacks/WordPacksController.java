@@ -30,12 +30,6 @@ public class WordPacksController
         return this.wordPacksService.getWordPack(name);
     }
 
-    @GetMapping("/{name}/words")
-    public List<String> getWordsForPack(@PathVariable("name") final String name)
-    {
-        return this.wordPacksService.getWordsForPack(name);
-    }
-
     @ExceptionHandler({CouldNotGetWordPackException.class, CouldNotGetWordsPacksException.class})
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Something went wrong while getting the word pack")
     public ErrorResponse handleException(Exception exception)

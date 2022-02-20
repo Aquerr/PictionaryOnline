@@ -9,6 +9,6 @@ import java.util.List;
 @AllArgsConstructor
 public class WordPack
 {
-    private String packName;
+    private String name;
     private List<String> words;
 }

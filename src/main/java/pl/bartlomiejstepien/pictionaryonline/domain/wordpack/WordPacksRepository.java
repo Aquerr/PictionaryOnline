@@ -7,7 +7,5 @@ public interface WordPacksRepository
 {
     List<WordPack> getWordsPacks() throws IOException;
 
-    List<String> getWordsForPack(final String packName) throws IOException;
-
     WordPack getWordPack(final String packName) throws IOException;
 }

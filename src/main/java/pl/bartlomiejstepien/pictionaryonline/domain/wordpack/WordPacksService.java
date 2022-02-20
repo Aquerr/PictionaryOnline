@@ -26,18 +26,6 @@ public class WordPacksService
         }
     }
 
-    public List<String> getWordsForPack(final String packName)
-    {
-        try
-        {
-            return this.wordPacksRepository.getWordsForPack(packName);
-        }
-        catch (IOException e)
-        {
-            throw new CouldNotGetWordPackException(e);
-        }
-    }
-
     public WordPack getWordPack(String name)
     {
         try
