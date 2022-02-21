@@ -7,6 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
+import pl.bartlomiejstepien.pictionaryonline.TestUtils
 import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPack
 import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.WordPacksService
 import pl.bartlomiejstepien.pictionaryonline.domain.wordpack.exception.CouldNotGetWordPackException
@@ -46,18 +47,7 @@ class WordPacksControllerTest extends Specification {
 
         and:
         result.andExpect(MockMvcResultMatchers.content()
-                .json("""
-                    [
-                        {
-                            "name":"EMPTY_PACK",
-                            "words":[]
-                        },
-                        {
-                            "name":"PACK",
-                            "words":["word1","word2","word3"]
-                        }
-                    ]
-                """))
+                .json(TestUtils.loadMockJsonFromFile("wordpacks/get-wordpacks.json")))
     }
 
     def "getWordPacks should return empty list of word packs"()
@@ -73,7 +63,7 @@ class WordPacksControllerTest extends Specification {
 
         and:
         result.andExpect(MockMvcResultMatchers.content()
-                .json("[]"))
+                .json(TestUtils.loadMockJsonFromFile("wordpacks/get-wordpacks-empty.json")))
     }
 
     def "getWordPack should return WordPack for given name"()
@@ -89,12 +79,7 @@ class WordPacksControllerTest extends Specification {
 
         and:
         result.andExpect(MockMvcResultMatchers.content()
-            .json("""
-                {
-                    "name":"PACK",
-                    "words":["word1","word2","word3"]
-                }
-            """))
+            .json(TestUtils.loadMockJsonFromFile("wordpacks/get-wordpack.json")))
     }
 
     def "getWordPack should return 500 when service throws CouldNotGetWordPackException"()

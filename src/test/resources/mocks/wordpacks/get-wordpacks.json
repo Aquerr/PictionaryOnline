@@ -1,0 +1,10 @@
+[
+    {
+        "name":"EMPTY_PACK",
+        "words":[]
+    },
+    {
+        "name":"PACK",
+        "words":["word1","word2","word3"]
+    }
+]
